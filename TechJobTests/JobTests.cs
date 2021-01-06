@@ -30,7 +30,13 @@ namespace TechJobTests
         public void TestJobsForEquality()
         {
             Assert.IsFalse(testJob3.Equals(testJob4));
-            Assert.IsFalse(testJob3.Id == testJob4.Id );
+        }
+        [TestMethod]
+        public void TestJobsForToString()
+        {
+            string expectedOutput = $"ID:{testJob3.Id} \n Name:{testJob3.Name} \n Employer:{testJob3.EmployerName} \n Location:{testJob3.EmployerLocation} \n Position Type:{testJob3.JobType} \n Core Competency:{testJob3.JobCoreCompetency}";
+            Assert.AreEqual(expectedOutput, testJob3.ToString());
+
         }
     }
 }
